@@ -6,9 +6,9 @@
   readメソッドで１レコード分の信号を受信。信号未検知なら即リターンする。
   isRepeatメソッドにより、リピートコマンド（連続した同一コマンド）を判定する。
 */
-class SonyIr{
+class IrRemote{
   public:
-  SonyIr(byte irPort){ this->irPort = irPort; }
+  IrRemote(byte irPort){ this->irPort = irPort; }
   void init();                      // 初期化
   bool read();                      // true:受信完, false:未受信
   word getCommand(){ return cmd; }  // 受信コマンド取得

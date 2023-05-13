@@ -3,10 +3,6 @@ void Inout::clear(){
   Lcd::clear();
 }
 
-void Inout::string(const char *ch){
-  Lcd::string(ch);
-}
-
 void Inout::update(){
   Lcd::update();
 }

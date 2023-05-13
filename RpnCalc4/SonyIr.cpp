@@ -37,14 +37,14 @@ PGM
 PGM
 
 */
-void SonyIr::init(){
+void IrRemote::init(){
   pinMode(irPort, INPUT_PULLUP);
   repeat = false;
   endTime = 0;
   cmd = oldCommand = 0x0000;
 }
 
-bool SonyIr::read(){
+bool IrRemote::read(){
   dword dt;
 
   dword startTime = micros();
@@ -69,7 +69,7 @@ bool SonyIr::read(){
   return true;
 }
 
-bool SonyIr::irCheck(dword &startTime, dword &deltaTime, dword timeShort, dword timeOver, bool careerOn){
+bool IrRemote::irCheck(dword &startTime, dword &deltaTime, dword timeShort, dword timeOver, bool careerOn){
   dword t;
 
   do{

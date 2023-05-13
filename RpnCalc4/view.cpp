@@ -15,13 +15,13 @@ void View::wait(word t){
 
 byte View::configTop(){
   clear();
-  string("Conf>\n1:Disp 2:Angle");
+  printf("Conf>\n1:Disp 2:Angle");
   return readNumKey(2);
 }
 
 void View::dispFormatSetting(byte &dispMode, byte &sci){
   clear();
-  string("Conf>Disp\nALL FIX ENG SCI");
+  printf("Conf>Disp\nALL FIX ENG SCI");
   dispMode = readNumKey(4) - 1;
   clear();
   const char *modeText[] ={"ALL", "FIX", "ENG", "SCI"};
@@ -32,7 +32,7 @@ void View::dispFormatSetting(byte &dispMode, byte &sci){
 
 byte View::angleSetting(){
   clear();
-  string("Conf>Angle\n1:RAD 2:DEG GRA");
+  printf("Conf>Angle\n1:RAD 2:DEG GRA");
   byte angleMode = readNumKey(3) - 1;
   const char *angleText[] = {"RAD", "DEG", "GRA"};
   clear();
